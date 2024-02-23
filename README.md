@@ -1,25 +1,28 @@
- ###  DATE: 
-
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
-
-**AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
+ INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
+### DATE : 23/02/24
+### NAME :  Gokul S														             
+### ROLLNUMBER : 212221220013
+### Department: Information Technology
 
 
-**COMPONENTS REQUIRED:**
+
+## AIM:  
+To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
+
+
+## COMPONENTS REQUIRED:
 1.	10 KΩPOT
 2.	1 KΩ resistor 
 3.	Arduino Uno 
 4.	USB Interfacing cable 
 5.	Connecting wires 
 6.	LED of choice 
-**
 
 
-**THEORY**: 
 
-**Analog signals:**
+## THEORY: 
+
+### Analog signals:
 
 Analog signals – directly measurable quantities in terms of some other quantity.
 Examples:
@@ -39,19 +42,19 @@ General specifications of analog sensor
 	4.Compatiblity
 	5. signal conversion capability
 
-**Potentiometer**
+### Potentiometer:
 A potentiometer, informally a pot, is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. If only two terminals are used, one end and the wiper, it acts as a variable resistor or rheostat.
 Potentiometers are commonly used to control electrical devices such as volume controls on audio equipment. Potentiometers operated by a mechanism can be used as position transducers, for example, in a joystick. Potentiometers are rarely used to directly control significant power (more than a watt), since the power dissipated in the potentiometer would be comparable to the power in the controlled load
-CIRCUIT DIAGRAM
 
-
-
-
-
+#### CIRCUIT DIAGRAM:
 ![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
+                                                       Figure 1
 
-**FIGURE -01
-**
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/103019882/8862d9dd-6e80-48a2-bc8c-c94a6f16984e)
+                                                       Figure 2
+
+
+
 
 **PROCEDURE:**
 
@@ -67,28 +70,52 @@ CIRCUIT DIAGRAM
 
 
 
-**PROGRAM** 
+#### PROGRAM:
+```
+
+int pot;
+int led=7;
+
+void setup()
+{
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  pot=analogRead(A0);
+  //Serial.print("Values=");
+  Serial.println(pot);
+  if (pot>900)
+  {  
  
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500); 
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+    delay(500);
+  }
+}
+```
+
+#### Simulation output:
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/103019882/4da8707f-c1d7-4b93-9efa-2a50d3ddb11c)
+                                                                 Figure 3
 
 
+##### OFF Condition:
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/103019882/281ed4a3-2c2f-4530-a2f7-e5c5e574fc6b)
+                                                                 Figure 4
 
 
+##### ON Condition:
+![image](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/103019882/d91318d1-1095-4abe-b1cb-ed1c0764a2de)
+                                                                Figure 5
 
-
-
-
-
-**
-**Simulation output:** 
-**
-
-
-[My image](username.github.com/repository/img/image.jpg)
-
-
-
-
-
-
-
-**RESULT: ** Arduino uno analog input functioning is learned and interfaced with digital input switch .
+## RESULT:  
+Arduino uno analog input functioning is learned and interfaced with digital input switch .

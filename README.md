@@ -1,5 +1,5 @@
- INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
-### DATE : 23/02/24
+# INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-
+### DATE : 4/3/24
 ### NAME :  Gokul S														             
 ### ROLLNUMBER : 212221220013
 ### Department: Information Technology
